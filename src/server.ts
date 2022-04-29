@@ -5,6 +5,7 @@ import { config } from "./config/config";
 import Logging from "./library/Logging";
 import authorRoutes from "./routes/Author";
 import bookRoutes from "./routes/Book";
+import priceRoutes from "./routes/PriceListings";
 
 const router = express();
 
@@ -59,6 +60,7 @@ const StartServer = () => {
   /** ROUTES */
   router.use("/authors", authorRoutes);
   router.use("/books", bookRoutes);
+  router.use("/prices", priceRoutes);
 
   /** Healthcheck */
   router.get("/ping", (req, res, next) =>
